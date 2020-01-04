@@ -752,4 +752,123 @@ console.log(finalValue);
 
 
 
+// coding challenge 3
 
+function tipCalculator(bill) {
+	var percentage;
+	if (bill < 50){
+		percentage = .2;
+	} else if ( bill >= 50 && bill < 200) {
+		percentage = .15;
+	} else {
+		percentage = .1;
+	}
+	return percentage * bill;
+}
+
+bills = [124, 48, 268];
+tips = [tipCalculator(bills[0]),
+		tipCalculator(bills[1]),
+		tipCalculator(bills[2])];
+
+total = [bills[0] + tips[0],
+		bills[1] + tips[1],
+		bills[2] + tips[2]];
+
+console.log(tips, total);
+
+//objects and properties
+//objects are the single most important feature of the javascript language 
+
+// naming each value with value 
+//object defines key value pairs 
+//objects group together diff variables that belong together but have no order
+//one key difference between objects and arrays
+//arrays order matters alot and objects it doesn't
+
+//object literal = using curly brackets
+john = {
+	firstName: 'John', //firstName is key and john is value. key value pair 
+	lastName: 'Smith',
+	birthYear: 1991,
+	family: ['jane', 'mark', 'bob', 'emily'], 
+	job: 'teacher',
+	isMarried: false
+};
+
+console.log(john.firstName); 
+console.log(john['lastName']);
+x = 'birthYear' // mutating data
+console.log(john[x]);
+
+job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+//new object syntax
+jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1952;
+jane['lastName'] = 'Smith';
+console.log(jane);
+
+//methods
+//in the last set we learned that objects can hold different types of data like arrrays or other objects
+//this set we will learn more about how to use a function in an object
+
+john = {
+	firstName: 'John', //firstName is key and john is value. key value pair 
+	lastName: 'Smith',
+	birthYear: 1991,
+	family: ['jane', 'mark', 'bob', 'emily'], 
+	job: 'teacher',
+	isMarried: false,
+	calcAge: function(birthYear) {
+		this.age = 2019 - this.birthYear; //keyword (this) = the current object / john.birthyear 
+	}
+};
+//this = very important understand how this works
+
+john.calcAge();
+console.log(john);
+//how to calculate the age of john? 
+
+//coding challenge 4 
+john = {
+	fullName: 'John Smith',
+	mass: 52, // kg
+	height: 3, //meters
+	calcBMI: function() {
+		this.BMI = this.mass / (this.height * this.height);
+		return this.BMI;
+	}
+}
+john.calcBMI();
+
+mark = {
+	fullName: "Mark Gold",
+	mass: 52,
+	height: 3,
+	calcBMI: function()	{
+		this.BMI = this.mass / (this.height* this.height);
+		return this.BMI;
+	}
+}
+mark.calcBMI();
+console.log(john, mark);
+
+/*if (john.firstName + john.lastName + this.BMI > mark.firstName + mark.lastName BMI) {
+	john.calcBMI();
+} else {
+	mark.calcBMI();
+}
+
+console.log();*/
+
+if (john.BMI > mark.BMI) {
+	console.log(john.fullName + ' has a higher BMI with ' + john.BMI);
+} else if (mark.BMI > john.BMI) {
+	console.log(mark.fullName + ' has a higher BMI with ' + mark.BMI);
+} else {
+	console.log('They have the same BMI');
+}
