@@ -131,7 +131,7 @@ console.log(x);
 */
 
 //coding challenge 1
-markHeight = 3;
+/*markHeight = 3;
 johnHeight = 4;
 markMass = 52;
 johnMass = 75;
@@ -436,7 +436,7 @@ console.log(firstName + ' isn\'t married yet, but will be married in 5 months. '
 
 */
  // Turnery Operators
- firstName = 'John';
+/*firstName = 'John';
  age = 16 
 
  age >= 18 ? console.log(firstName + ' drinks beer. ')
@@ -466,7 +466,7 @@ this is the same thing as the turney operator
 // SWITCH STATEMENT 
 //else if statement with multiple else if clauses 
 
-job = 'instructor';
+/*job = 'instructor';
 switch (job)	{
 	case 'teacher':
 	case 'instructor':
@@ -511,14 +511,233 @@ if (height == '23') {
 
 // always use the === 
 
-//new
+//coding project 2
+
+*/ 
+/* = (89 + 120 + 103) / 3;
+
+avgMike = (116 + 94 + 123) / 3;
+firstName = 'John'
+
+console.log(avgJohn, avgMike);
+
+if (avgJohn >= avgMike)	{
+	console.log('John\'s team has the highest average score with a score of 104. ');
+} else {
+	console.log('Mike\'s team has the highest average score with a scrore of 111. ');
+}
 
 
 
+avgJohn = (89 + 120 + 143) / 3;
+
+avgMike = (116 + 94 + 123) / 3;
+
+console.log(avgJohn, avgMike);
+
+if (avgJohn >= avgMike)	{
+	console.log('John\'s team has the highest average score with a score of 117.33. ');
+} else {
+	console.log('Mike\'s team has the highest average score with a scrore of 111. ');
+}
+
+
+avgMary = (97 +134 + 156) /3;
+
+console.log(avgMary);
+
+if (avgMary > avgMike && avgJohn)	{
+	console.log('Mary\'s team has the highest avgerage score');
+} else {
+	console.log('Mike or John has a higher average score. ');
+}
+
+
+//coding challenge solution 
+
+
+avgJohn = (20 + 120 + 143) / 3;
+avgMike = (119 + 94 + 123) / 3;
+avgMary = (119 + 94 + 123) /3;
+console.log(avgJohn, avgMike, avgMary);
+
+/*if (avgJohn > avgMike)	{
+	console.log('John\'s team has the highest average score with a score of ' + avgJohn);
+} else if (avgMike > avgJohn) {
+	console.log('Mike\'s team has the highest average score with a score of ' + avgMike);
+} else {
+	colsole.log('There is a draw. ');
+}
 
 
 
+if  (avgJohn > avgMike && avgJohn > avgMary) {
+	console.log('John\'s team has the highest average score with a score of ' + avgJohn);
+} else if(avgMike > avgJohn && avgMike > avgMary) {
+	console.log('Mike\'s team has the highest average score with a score of ' + avgMike);
+} else if(avgMary > avgMike && avgMary > avgJohn) {
+	console.log('Mary\'s team has the highest average score with a score of ' + avgMary);
+} else {
+	console.log('There is a tie. ');
 
+}
+
+*/
+
+/*******************************
+
+FUNCTIONS - piece of code you will use ofton, they are like  containers that hold lines of code and can return results
+*/
+
+/*function calculateAge(birthYear) // this is like a variable in  a function 
+{
+	return 2019 - birthYear;
+}
+
+ageJohn = calculateAge(1991); // this is now the function
+ageMike = calculateAge(1994);
+ageMary = calculateAge(1992);
+console.log(ageJohn, ageMary, ageMike);
+
+
+function yearUntilRetirement(year, firstName)
+{
+	age = calculateAge(year);
+	retirement = 65 - age;
+
+if (retirement > 0) { 
+	console.log(firstName + ' retires in ' + retirement + ' years. ');
+} else {
+	console.log(firstName + ' has already retired. ')
+}
+	}
+
+yearUntilRetirement(1991, 'John');
+yearUntilRetirement(1994, 'Mike');
+yearUntilRetirement(1992, 'Mary');
+
+//2 arguements 1991 which is year and 'firstname' is john 
+
+
+/*************************
+FUNCTION STATEMENTS AND EXPRESSIONS	
+*/
+
+//Function declaration
+//function whatIsYourJob(job, firstName){}
+//
+
+//FUNCTION expression 
+/*whatIsYourJob = function(job, firstName)	{
+	switch(job) {
+		case 'teacher':
+		case 'instructor':
+			return firstName + ' teaches kids how to code. ';
+		case 'driver':
+			return firstName + ' drivers an uber in denver. ';
+		case 'designer':
+			return firstName + ' designs websites. ';
+		default:
+			return firstName + ' does something else. ';
+	}
+}
+
+console.log(whatIsYourJob('instructor', 'John'));
+console.log(whatIsYourJob('runner', 'Mark'));
+console.log(whatIsYourJob('driver', 'Mary'));
+
+//statements and expressions do not only apply to functions
+
+//expressions: pieces of code that always produce a value
+// for example, if (avgJohn > avgMike) is an expression that needs a value 
+//statements do not produces immediate results and only produce actions
+//if else statements, while loop, function declaration 
+
+/*************************
+	ARRAYS - collections of variables that have different data types
+  arrays are 0 based
+	*/
+//NEW ARRAY
+/*names = ['John', 'Mark', 'Mary'];
+years = new Array(1990, 1969, 1948);
+
+console.log(names[0]); // finds specific name from array 
+console.log(names.length); // shows how many elements are in the array
+
+//MUTATING ARRAY DATA
+names[1] = 'Ben';
+names[5] = 'Jane';
+console.log(names);
+
+//DIFFERENT DATA TYPES
+john = [ 'John', 'Smith', 1991, 'teacher', false];
+
+//push method - add element at the end of the array. 
+john.push('blue');
+//unshift adds an element to the beggining of the array
+john.unshift('Mr.');
+console.log(john);
+
+//pop removes last element from array
+john.pop()
+john.pop()
+//shift removes the first element from the array
+console.log(john);
+
+// indexOf shows which order the john array 
+console.log(john.indexOf(1991)); 
+
+//this is a great way to see if the elemement is in the array or not
+//we know the john.indexOf('designer') is not part of the array meaning it would return -1 
+// ? mark asks if john.indexOf('designer') is equal to -1 then john isn't a desinger
+
+isDeisgner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
+console.log(isDeisgner);
+
+*/
+total_15 = (124 + (124 * .15));
+total_20 = (48 + (48 * .20));
+total_10 = (268 + (268 * .10));
+console.log(total_15, total_20, total_10);
+
+total_15 = total_15 - 124;
+total_20 = total_20 - 48;
+total_10 = total_10 - 268;
+console.log(total_15, total_20, total_10);
+
+tip = [18.59, 9.60, 26.80];
+console.log(tip);
+
+totalWithTip = [142.6, 57.6, 294.8];
+console.log(totalWithTip);
+
+// teachers solution
+
+function tipCalc(bill)	{
+	var percentage;
+	if (bill < 50) {
+		percentage = .2;
+	} else if (bill >= 50 && bill < 200) {
+		percentage = .15;
+	} else {
+		percentage =.1;
+	}
+	return percentage * bill;
+} 
+
+/*var bills = [124, 48, 268];
+var tip = 	[tipCalc(bills[0]),
+		tipCalc(bills[1]),
+		tipCalc(bills[2])];
+
+console.log(bills)
+
+var finalValue = [bills[0] + tip[0],
+				 [bills[1] + tip[1],
+				 [bills[2] + tip[2]]
+
+console.log(finalValue);
+/*
 
 
 
