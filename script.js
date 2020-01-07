@@ -653,3 +653,148 @@ if (john.BMI > mark.BMI) {
 } else {
 	console.log('They have the same BMI');
 }
+
+
+//LOOPS aND iteration 
+//this is why loops would be useful, we don't need to console.log() 1-4 we could do a loop
+console.log(1);
+console.log(2);
+console.log(3);
+console.log(4);
+//FOR LOOP
+for (var i = 0; i < 10; i++) 	{
+	console.log(i);
+}
+
+// i is standard for a counter variable
+// i = 0, 0 < 10 is true, then log i to console, i++ 
+//i = 1, 1 <10, true, log to console, i++
+//....
+//i = 9, 9 <10, true, log to console, i++
+//i = 10, 10 <10, FALSE , exit the loop
+
+john = ['John', 'Smith', 1991, 'designer', false];
+for (i = 0; i < john.length; i++)	{
+	console.log(john[i]);
+}
+
+//while loop only has condition 
+//WHILE LOOP
+i = 0;
+while(i < john.length){
+	console.log(john[i]);
+	i++;
+}
+
+//continue and break statements 
+//continue statements are used for quitting the current iteration and contunue to the next one
+/*john = ['John', 'Smith', 1991, 'designer', false];
+for (i = 0; i < john.length; i++)	{
+	if (typeof john[i] !== 'string') continue; //!== means different strict different operator. this means !== different than string than continue 
+	console.log(john[i]);
+}
+//breaks exits current iteration and current loop
+for (i = 0; i < john.length; i++)	{
+	if (typeof john[i] !== 'string') break; //!== means different strict different operator. this means !== different than string than continue 
+	console.log(john[i]);
+}
+
+//best way to understand continue vs break 
+//continue will continue loop past pieces that are not strings
+//break end the loop as soon as it finds something that isn't a string
+
+
+//BACKWARDS LOOP
+for (i = john.length -1; i >= 0; i--)	{
+	console.log(john[i]);
+}
+*/
+//coding challenge 5
+john = {
+	fullName: 'John Smith',
+	bills: [124, 48, 268, 180, 42],
+	calcTips: function() { //inside of this calctips method we have a loop that calculates all of the 5 tips
+		this.tips = []; //empty arrays so we can fill them with the i 
+		this.finalValues = [];
+
+		for (i = 0; i < this.bills.length; i++) //this.bills.length reads bills array then length 
+		{
+			//determine percentage based on tipping rules
+			var percentage;
+			bill = this.bills[i];
+
+			if (bill < 50)	{
+				percentage = .2;
+			} else if (bill >= 50 && bill < 200) {
+				percentage = .15;
+			} else {
+				percentage = .1;
+			}
+		
+		// add results to corresponding arrays
+		this.tips[i] = bill * percentage;
+		this.finalValues[i] = bill + bill * percentage;
+		}
+	}
+}
+
+
+mark = {
+	fullName: 'Mark Gold',
+	bills: [77, 475, 110, 45],
+	calcTips: function() {
+		this.tips = [];
+		this.finalValues = [];
+
+		for (i = 0; i < this.bills.length; i++) 
+		{
+			//determine percentage based on tipping rules
+			var percentage;
+			bill = this.bills[i];
+
+			if (bill < 100)	{
+				percentage = .2;
+			} else if (bill >= 100 && bill < 300) {
+				percentage = .1;
+			} else {
+				percentage = .15;
+			}
+		
+		// add results to corresponding arrays
+		this.tips[i] = bill * percentage;
+		this.finalValues[i] = bill + bill * percentage;
+		}
+	}
+}
+
+
+function calcAverage(tips) {
+	sum = 0;
+	for (i = 0; i < tips.length; i++) {
+		sum = sum + tips[i];  
+//example of how this works lets say we have the following (tips) array [2, 6, 4] -> 
+//sum = 0  // 0 = 0 +2 = 2 new sum = 2 
+//next iterration 2 = 2 + 6 = 8 
+//8 = 8 + 4 = 12 
+//final sum is 12 
+	}
+	return sum / tips.length;
+}
+// 12 / 3 = 4 
+//4 is the average
+
+//calculations
+john.calcTips();
+mark.calcTips();
+
+
+john.average = calcAverage(john.tips); //john.tips = the array in which all the tips are stored
+mark.average = calcAverage(mark.tips);
+
+console.log(john, mark);
+
+if (john.average > mark.average) {
+	console.log(john.fullName + ' has a higher average tip with ' + john.average)
+} else if (mark.average > john.average) {
+	console.log(mark.fullName + ' has a higher average tip with ' + mark.average)
+}
