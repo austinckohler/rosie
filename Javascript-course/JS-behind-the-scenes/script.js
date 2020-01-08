@@ -72,11 +72,16 @@ console.log(age);
 ///////////////////////////////////////
 // Lecture: Scoping
 
-
+/* 
+Scoping answers the question "where can we access a certain variable?"
+    - each function creates a scope: the environment in which the variables it defines are accessible
+    - lexical scoping: where something is written in the code, function that is written within another function 
+        gets access to the scope of the outer function or parent function  
+*/
 // First scoping example
 
-/*
-var a = 'Hello!';
+
+/*var a = 'Hello!';
 first();
 
 function first() {
@@ -88,14 +93,14 @@ function first() {
         console.log(a + b + c);
     }
 }
-*/
 
+*/
 
 
 // Example to show the differece between execution stack and scope chain
 
-/*
-var a = 'Hello!';
+
+var a = 'Hello!'; //global scope includes var = a and the first function and third function
 first();
 
 function first() {
@@ -104,15 +109,19 @@ function first() {
 
     function second() {
         var c = 'Hey!';
-        third()
+        third() //third function was called from second function because of the scope chain
     }
 }
 
+
 function third() {
     var d = 'John';
-    console.log(a + b + c + d);
+    console.log(a + d); //c is undefined, 3rd function can't access variable c because execution stack is diffwerent from scope chain
 }
-*/
+
+// EXECUTION STACK: order in which functions are caled
+// SCOPE CHAIN: order in which fuctions are written lexically (written within other functions)
+// since function three is called before functions one and two it can't access variables B & C
 
 
 
