@@ -128,9 +128,21 @@ function third() {
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+/*
+this: 
+    - regular function call: the default, points towards the global object (windown object, in the browser)
+    - method call: the this variable points to the object that is calling the method
+    - this keyword is not assigned a value until a function where it is defined is actually called
+        - techinally only assigned a value as soon as an object calls a method.
+
+for example
 
 
 
+/parentdirectory/subdirectory/another/subdirectory/
+
+//objects: unique entity which has some property and methods
+//class: blueprint of an object. class is a template while object are instances of the class
 
 
 
